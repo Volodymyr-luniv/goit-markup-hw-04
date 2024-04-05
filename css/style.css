@@ -27,6 +27,10 @@ img {
 	height: auto;
 }
 
+button {
+	cursor: pointer;
+}
+
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -101,7 +105,6 @@ body {
 }
 
 .header {
-	/* padding: 24px 0; */
 	border-bottom: 1px solid #e7e9fc;
 }
 
@@ -129,6 +132,10 @@ body {
 	gap: 40px;
 }
 
+.header-menu-item {
+	position: relative;
+}
+
 .header-menu-link {
 	display: block;
 	font-weight: 500;
@@ -142,6 +149,22 @@ body {
 .header-menu-link:hover,
 .header-menu-link:focus {
 	color: #404bbf;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-menu-link:hover::after {
+	content: "";
+	display: block;
+	border-radius: 2px;
+	width: 48px;
+	height: 4px;
+	background-color: #404bbf;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	transition-duration: 1000ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contact-list {
@@ -162,12 +185,21 @@ body {
 .header-contact-link:hover,
 .header-contact-link:focus {
 	color: #404bbf;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*-------------------HERO */
 
 .hero {
-	background: #2e2f42;
+	background-image: linear-gradient(
+			rgba(46, 47, 66, 0.7),
+			rgba(46, 47, 66, 0.7)
+		),
+		url(../images/hero-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1440px;
 	padding: 188px 0;
 }
 
@@ -179,7 +211,6 @@ body {
 	margin: 0 auto;
 	color: #fff;
 	max-width: 496px;
-	padding-top: 68px;
 	margin-bottom: 48px;
 	text-align: center;
 }
@@ -191,7 +222,7 @@ body {
 	letter-spacing: 0.04em;
 	color: #fff;
 	background: #4d5ae5;
-	cursor: pointer;
+	/* cursor: pointer; */
 	padding: 16px 32px;
 	border-radius: 4px;
 	gap: 10px;
@@ -205,6 +236,8 @@ body {
 .hero-button:hover,
 .hero-button:focus {
 	background-color: #404bbf;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*--------------------------ADVANTAGES */
@@ -218,12 +251,18 @@ body {
 	width: calc((100% - 3 * 24px) / 4);
 }
 
+.advantages-card-icon {
+	border: 1px solid #8e8f99;
+	border-radius: 4px;
+	background-color: #f4f4fd;
+	padding: 24px 100px;
+	margin-bottom: 8px;
+}
+
+.icon {
+}
+
 .advantages-title {
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 1.2;
-	letter-spacing: 0.02em;
-	color: #2e2f42;
 	margin-bottom: 8px;
 }
 
@@ -247,22 +286,54 @@ body {
 
 .team-item {
 	background-color: #fff;
-	box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+	box-shadow: 0 10px 8px 5px rgba(46, 47, 66, 0.08),
 		0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 	border-radius: 0 0 4px 4px;
 }
 
 .team-item-name {
-	padding: 32px 0;
+	/* padding: 32px 0; */
 }
 
 .team-title {
 	text-align: center;
-	margin-bottom: 8px;
+	/* margin-bottom: 8px; */
 }
 
 .team-text {
 	text-align: center;
+	margin-bottom: 8px;
+}
+
+.team-list-social {
+	display: flex;
+	gap: 24px;
+	justify-content: center;
+}
+.team-item-social {
+	width: 40px;
+	height: 40px;
+	margin-bottom: 32px;
+}
+.team-link-social {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #4d5ae5;
+}
+
+.team-link-social:hover,
+.team-link-social:focus {
+	background-color: #31d0aa;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-icon-social {
+	fill: #fff;
 }
 
 /*-----------------PORTFOLIO */
@@ -278,6 +349,15 @@ body {
 	border-bottom: 1px solid rgb(190, 178, 178);
 }
 
+.portfolio-item:hover,
+.portfolio-item:focus {
+	background-color: #fff;
+	box-shadow: 0 2px 10px 8px rgba(46, 47, 66, 0.08),
+		0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .portfolio-item-app {
 	padding: 32px 16px;
 	border: 1px solid #e7e9fc;
@@ -288,12 +368,7 @@ body {
 	margin-bottom: 8px;
 }
 
-.portfolio-text {
-}
-
-/*------------------FOOTER */
-
-.footer {
+*------------------FOOTER */ .footer {
 	background-color: #2e2f42;
 	padding: 100px 0;
 }
