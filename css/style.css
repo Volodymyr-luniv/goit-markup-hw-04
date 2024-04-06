@@ -144,12 +144,9 @@ body {
 	letter-spacing: 0.02em;
 	color: #404bbf;
 	padding: 24px 0;
-	transition-property: color;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-menu-link:hover:after {
+.header-menu-link::after {
 	content: "";
 	display: block;
 	border-radius: 2px;
@@ -159,6 +156,12 @@ body {
 	position: absolute;
 	left: 0;
 	bottom: -1px;
+	opacity: 0;
+}
+
+.header-menu-link:hover::after {
+	opacity: 1;
+	bottom: 0;
 }
 
 .header-contact-list {
