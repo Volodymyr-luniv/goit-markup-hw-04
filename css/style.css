@@ -307,7 +307,7 @@ body {
 	gap: 24px;
 	justify-content: center;
 	align-items: center;
-	padding-bottom: 32px;
+	margin-bottom: 32px;
 }
 
 .item-social {
